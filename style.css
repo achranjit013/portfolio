@@ -16,7 +16,15 @@
     --dark-color-border: var(--color-white);
 
     /* box shadow */
-    --box-shadow: 0 0 10px 5px grey;
+    --box-shadow: 0 5px 10px 1px grey;
+
+    /*
+    box-shadow: 
+    1st value -> +ve : right shadow, -ve : left shadow, no value (0) : no shadow
+    2nd value -> +ve : bottom shadow, -ve : top shadow, no value (0) : no shadow
+    3rd value : blur effect (no negative value)
+    4th value : spread radius or area -> how much the shadow goes
+    */
 }
 
 /* this allows us to include the padding and border in an element's total width and height */
@@ -76,12 +84,18 @@ a {
     display: none;
 }
 
+/* hamb menu checkbox */
+#side-menu {
+    display: none;
+}
+
 /* header-section */
 header {
     box-shadow: var(--box-shadow);
     background: var(--body-bg);
     position: sticky; /* inorder to fix its postion after certain scroll point */
     top: 0; /* It will make sure that the header is positioned fixed right at the top of the browser while scrolling */
+    height: 80px;
 }
 
 .header-section {
@@ -90,16 +104,16 @@ header {
     padding: 1rem 0;
 }
 
-.header-info > div:nth-child(1) {
+.header-section .header-info {
+    position: relative;
+}
+
+.header-section .header-info > div:nth-child(1) {
     font-weight: bolder;
     margin-right: 1rem;
 }
 
-.header-info {
-    position: relative;
-}
-
-.line::before {
+.header-section .header-info .line::before {
     content: '';
     width: 3px;
     height: 100%;
@@ -108,7 +122,7 @@ header {
     left: 58px;
 }
 
-.header-menu ul li a:hover {
+.header-section .header-menu ul li a:hover {
     color: var(--color-orange);
     transition: all 0.5s;
 }
@@ -132,33 +146,38 @@ header {
     --color-border: var(--dark-color-border);
 }
 
+#darkMode:checked + .wrapper .summary-section .summary-bar {
+    background: white;
+}
+
 /* hero section */
 .hero-section {
     justify-content: space-between;
     margin-top: 10rem;
-    padding: 0 5rem;
+    padding: 0 4rem;
     background: var(--color-orange);
 }
 
-.left-info {
+.hero-section .left-info {
     flex-direction: column;
-    padding: 2rem 0;
+    padding: 4rem 0;
 }
 
-.left-info span {
+.hero-section .left-info span {
     font-size: 1.5rem;
     font-weight: bolder;
     letter-spacing: 2px;
 }
 
-.left-info > div:nth-child(2){
+.hero-section .left-info > div:nth-child(2){
     font-size: 3rem;
     font-weight: bolder;
     letter-spacing: 2px;
 }
 
-.left-info button {
-    padding: 1rem;
+.hero-section .left-info button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
     border-radius: 2rem;
     color: var(--color-font);
     background: var(--dark-bg);
@@ -166,24 +185,28 @@ header {
     cursor: pointer;
 }
 
-.right-info {
-    justify-content: flex-end;
+.hero-section .right-info {
+    justify-content: center;
     align-items: center;
-    margin-top: -6rem;
 }
 
-.right-info img {
+.hero-section .right-info img {
+    width: 23vw;
     height: 105%;
 }
 
-/* summary section */
+/* summary / banner section */
 .summary-section {
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
     margin-top: 10rem;
-    padding: 2rem;
+    padding: 2rem 0;
     border: 2px solid var(--color-border);
     border-radius: 10rem;
+}
+
+.summary-section .summary-info {
+    justify-content: center;
+    align-items: center;
 }
 
 .summary-section .summary-info .summary-logo {
@@ -196,18 +219,13 @@ header {
     align-items: center;
 }
 
-.summary-section .summary-info {
-    justify-content: center;
-    align-items: center;
-}
-
-.summary-section .summary-info span {
+.summary-section .summary-info div:nth-child(2) span {
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
-.summary-section .summary-info p {
+.summary-section .summary-info div:nth-child(2) p {
     color: var(--color-orange);
 }
 
@@ -266,6 +284,11 @@ header {
     box-shadow: var(--box-shadow);
 }
 
+.recent-work .recent-work-container .recent-work-content > div img {
+    height: 16rem;
+    width: 100%;
+}
+
 .recent-work .recent-work-container .recent-work-content .recent-work-info {
     justify-content: space-between;
     align-items: center;
@@ -285,6 +308,7 @@ header {
 
 .about-me-section .about-me-container {
     justify-content: center;
+    align-items: center;
     gap: 3rem;
 }
 
@@ -358,16 +382,22 @@ header {
 .get-in-touch .git-content .git-email {
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    font-weight: bold;
     border-radius: 3rem;
     background: var(--color-dark);
     color: var(--color-font);
-    padding: 0.5rem 3rem;
+    padding: 1rem 3rem;
 }
 
-.get-in-touch .git-content .git-email i {
-    padding: 0.5rem;
+.get-in-touch .git-content .git-email span,
+.get-in-touch .git-content .git-email .send-icon i {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.get-in-touch .git-content .git-email .send-icon {
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem;
     background: var(--color-orange);
     border-radius: 50%;
 }
@@ -388,4 +418,22 @@ footer {
 footer p {
     padding-top: 3rem;
     text-align: center;
+}
+
+/* scroll up */
+.scroll-up {
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background: var(--color-dark);
+    position: fixed;
+    bottom: 34.9rem;
+    right: 5rem;
+}
+
+.scroll-up i {
+    font-size: 2rem;
+    color: var(--color-font);
 }

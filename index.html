@@ -16,6 +16,9 @@
     <!-- dark mode checkbox -->
     <input type="checkbox" id="darkMode">
     <div class="wrapper">
+        <!-- Hamburger icon -->
+        <input type="checkbox" id="side-menu">
+
         <!-- header section -->
         <header>
             <section class="container flex header-section">
@@ -23,13 +26,21 @@
                     <div>Ranjit</div>
                     <div class="line">Soft. Engineer</div>
                 </div>
+
+                <!-- hamb menu -->
+                <label for="side-menu" class="hamb">
+                    <div class="hamb-menu flex">
+                        <span class="hamb-line"></span>
+                    </div>
+                </label>
+                
                 <div class="header-menu">
                     <ul class="flex">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </section>
@@ -43,23 +54,23 @@
         </div>
 
         <!-- hero section -->
-        <section class="container hero-section flex">
+        <section class="container hero-section flex" id="home">
             <div class="left-info flex">
                 <div>Hi I'm <span>Ranjit Acharya</span></div>
                 <div>Soft. Engineer</div>
                 <div>I love to code and teach other what I know.</div>
                 <div>
-                    <a href="" download="">
+                    <a href="./assets/Resume-Ranjit-Acharya.pdf" download="">
                         <button>Download CV <i class="fa-solid fa-download"></i></button>
                     </a>
                 </div>
             </div>
             <div class="right-info flex">
-                <img src="./assets/image_portfolio.png" alt="my profile image">
+                <img src="./assets/about me image.png" alt="my profile image">
             </div>
         </section>
 
-        <!-- summary section -->
+        <!-- summary / banner section -->
         <section class="container summary-section flex">
             <div class="summary-info flex">
                 <div class="summary-logo flex">
@@ -70,6 +81,7 @@
                     <p>Graduate</p>
                 </div>
             </div>
+
             <div class="summary-bar"></div>
 
             <div class="summary-info flex">
@@ -81,6 +93,7 @@
                     <p>Completed</p>
                 </div>
             </div>
+
             <div class="summary-bar"></div>
 
             <div class="summary-info flex">
@@ -95,11 +108,11 @@
         </section>
 
         <!-- skills section -->
-        <section class="container skills-section">
+        <section class="skills-section" id="skills">
             <h2 class="title">
                 <span>Skills</span>
             </h2>
-            <div class="skills-content flex">
+            <div class="container skills-content flex">
                 <div class="html skills-info flex">
                     <div class="skills-icon flex"><i class="fa-brands fa-html5"></i></div>
                     <p>HTML</p>
@@ -132,14 +145,14 @@
         </section>
 
         <!-- recent work section -->
-        <section class="container recent-work">
+        <section class="recent-work" id="projects">
             <h2 class="title">
                 <span>My Recent Work</span>
             </h2>
-            <div class="recent-work-container grid">
+            <div class="container recent-work-container grid">
                 <div class="recent-work-content">
                     <div>
-                        <img src="./assets/my recent work 1.png" alt="my recent work" width="100%">
+                        <img src="./assets/my recent work 1.png" alt="my recent work">
                     </div>
                     <div class="container flex recent-work-info">
                         <h3>Personal Portfolio Web Site</h3>
@@ -153,7 +166,7 @@
     
                 <div class="recent-work-content">
                     <div>
-                        <img src="./assets/my recent work 2.png" alt="my recent work" width="100%">
+                        <img src="./assets/my recent work 2.png" alt="my recent work">
                     </div>
                     <div class="container flex recent-work-info">
                         <h3>Personal Portfolio Web Site</h3>
@@ -167,7 +180,7 @@
     
                 <div class="recent-work-content">
                     <div>
-                        <img src="./assets/my recent work 3.png" alt="my recent work" width="100%">
+                        <img src="./assets/my recent work 3.png" alt="my recent work">
                     </div>
                     <div class="container flex recent-work-info">
                         <h3>Personal Portfolio Web Site</h3>
@@ -181,7 +194,7 @@
     
                 <div class="recent-work-content">
                     <div>
-                        <img src="./assets/my recent work 4.png" alt="my recent work" width="100%">
+                        <img src="./assets/my recent work 4.png" alt="my recent work">
                     </div>
                     <div class="container flex recent-work-info">
                         <h3>Personal Portfolio Web Site</h3>
@@ -196,13 +209,13 @@
         </section>
 
         <!-- about me section -->
-        <section class="about-me-section">
+        <section class="about-me-section" id="about">
             <h2 class="title">
                 <span>About Me</span>
             </h2>
             <div class="container about-me-container flex">
                 <div class="about-me-img flex">
-                    <img src="./assets/about me image.png" alt="about me image">
+                    <img src="./assets/myprofileimg.png" alt="about me image">
                 </div>
                 <div class="about-me-desc">
                     <h1>Ranjit Acharya</h1>
@@ -222,7 +235,7 @@
         </section>
 
         <!-- get in touch section -->
-        <section class="get-in-touch">
+        <section class="get-in-touch" id="contact">
             <h2 class="title">
                 <span>Get In Touch</span>
             </h2>
@@ -245,9 +258,14 @@
                     </a>
                 </div>
                 <p>OR</p>
-                <div class="git-email">
-                    <a href = "mailto: achranjit013@gmail.com">achranjit013@gmail.com <i class="fa-solid fa-paper-plane"></i></a>
-                </div>
+                <a href="mailto:achranjit013@gmail.com">
+                    <div class="git-email flex">
+                        <span>achranjit013@gmail.com</span>
+                        <div class="send-icon flex">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -257,11 +275,11 @@
                 <div class="footer-links">
                     <h3>Page Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -278,6 +296,12 @@
 
             <p>&copy; All Rights Reserved.</p>
         </footer>
+
+        <a href="#home">
+            <div class="scroll-up flex">
+                <i class="fa-solid fa-angles-up"></i>
+            </div>
+        </a>
     </div>
 </body>
 </html>
